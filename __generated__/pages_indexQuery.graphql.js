@@ -15,6 +15,7 @@ export type pages_indexQueryResponse = {|
       +id: string,
       +name: string,
       +description: string,
+      +category: string,
       +price: number,
       +createdAt: string,
     |}>
@@ -34,6 +35,7 @@ query pages_indexQuery {
       id
       name
       description
+      category
       price
       createdAt
     }
@@ -84,6 +86,13 @@ var v0 = [
             "alias": null,
             "args": null,
             "kind": "ScalarField",
+            "name": "category",
+            "storageKey": null
+          },
+          {
+            "alias": null,
+            "args": null,
+            "kind": "ScalarField",
             "name": "price",
             "storageKey": null
           },
@@ -119,16 +128,16 @@ return {
     "selections": (v0/*: any*/)
   },
   "params": {
-    "cacheID": "8c4d3e8c10d019ac77d3fa320c797a67",
+    "cacheID": "28dfe7aec3544a23f6181df30d29adfb",
     "id": null,
     "metadata": {},
     "name": "pages_indexQuery",
     "operationKind": "query",
-    "text": "query pages_indexQuery {\n  viewer {\n    products {\n      id\n      name\n      description\n      price\n      createdAt\n    }\n  }\n}\n"
+    "text": "query pages_indexQuery {\n  viewer {\n    products {\n      id\n      name\n      description\n      category\n      price\n      createdAt\n    }\n  }\n}\n"
   }
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '71c9f718f0db5a8b3ee287bf50c2a4c1';
+(node/*: any*/).hash = 'f98873bf35a5e325c909a9e4ba418dc8';
 
 module.exports = node;

@@ -1,9 +1,8 @@
-import Box from "@material-ui/core/Box";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import React from "react";
 import Button from "@material-ui/core/Button";
-import { Dialog, DialogActions, DialogContent, DialogTitle, FormHelperText, OutlinedInput, TextField, Typography } from "@material-ui/core";
+import { DialogActions, DialogContent, DialogTitle, FormHelperText, OutlinedInput, TextField, Typography } from "@material-ui/core";
 import { useMutation } from "react-relay";
 import { createProductMutation } from "../pages/create";
 import { useRouter } from "next/router";

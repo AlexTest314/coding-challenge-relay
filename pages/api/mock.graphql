@@ -25,15 +25,19 @@ type Product {
 
 input UpdateProductInput {
   id: ID!
-  name: String
-  description: String
-  price: Float
+  name: String!
+  category: String!
+  description: String!
+  price: Float!
+  createdAt: String!
 }
 
 input CreateProductInput {
   name: String!
+  category: String!
   description: String!
   price: Float!
+  createdAt: String!
 }
 
 type Viewer {

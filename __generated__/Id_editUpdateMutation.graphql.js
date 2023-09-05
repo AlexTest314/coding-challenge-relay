@@ -10,9 +10,11 @@
 import type { ConcreteRequest } from 'relay-runtime';
 export type UpdateProductInput = {|
   id: string,
-  name?: ?string,
-  description?: ?string,
-  price?: ?number,
+  name: string,
+  category: string,
+  description: string,
+  price: number,
+  createdAt: string,
 |};
 export type Id_editUpdateMutationVariables = {|
   input: UpdateProductInput
