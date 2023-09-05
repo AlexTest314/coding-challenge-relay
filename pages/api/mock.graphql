@@ -18,6 +18,7 @@ type Product {
   id: ID!
   name: String!
   description: String!
+  category: String!
   price: Float!
   createdAt: String!
 }

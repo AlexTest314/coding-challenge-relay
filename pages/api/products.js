@@ -1,5 +1,5 @@
 // @flow
-import { faker } from '@faker-js/faker';
+import { faker } from "@faker-js/faker";
 
 type Product = {
   id: number,
@@ -7,7 +7,7 @@ type Product = {
   price: string,
   description: string,
   category: string,
-  createdAt: string,
+  createdAt: string
 };
 
 export const products: Product[] = new Array(9).fill(1).map((_, i) => ({
@@ -16,11 +16,26 @@ export const products: Product[] = new Array(9).fill(1).map((_, i) => ({
   price: faker.commerce.price(),
   description: faker.commerce.productDescription(),
   category: faker.commerce.department(),
-  createdAt: faker.date.past().toISOString(),
+  createdAt: faker.date.past().toISOString()
 }));
 
 export const get = () => products;
 
 export const add = (product: Object) => {
-  products.push(product);
+  const newProduct = {
+    id: products.length + 1,
+    ...product,
+    createdAt: faker.date.past().toISOString()
+  };
+
+  products.push(newProduct);
+  return newProduct;
+};
+
+export const update = (product: Object) => {
+  const updatedProduct = { ...product, id: Number(product.id) };
+  const productIdx = products.findIndex(({ id }) => id == product.id);
+  products[productIdx] = { ...updatedProduct };
+
+  return updatedProduct;
 };
