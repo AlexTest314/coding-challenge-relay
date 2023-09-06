@@ -17,7 +17,7 @@ const MainContainer = ({ children }: Props): React$Node => {
   const handleCreateProduct = () => router.push({ pathname: "/create" });
   return (
     <>
-      <AppBar position='static'>
+      <AppBar position='sticky'>
         <Toolbar>
           <Button onClick={handleCancel}>Home</Button>
           <Button onClick={handleCreateProduct}>Create product</Button>

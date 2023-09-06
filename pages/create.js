@@ -26,7 +26,14 @@ export const createProductMutation = graphql`
 const CreateQuery = graphql`
   query createQuery {
     viewer {
-      products
+      products {
+        id
+        name
+        description
+        category
+        price
+        createdAt
+      }
     }
   }
 `;

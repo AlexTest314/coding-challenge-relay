@@ -127,7 +127,7 @@ const ProductForm = ({ product }) => {
       <StyledFormContent>
         {formFields.map((field, i) => (
           <>
-            <InputWrapper>
+            <InputWrapper key={i}>
               <InputField
                 error={formik.errors[field]}
                 key={i}

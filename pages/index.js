@@ -46,12 +46,10 @@ function Index(props: Props) {
 
         <StyledGridWrapper>
           {props.viewer.products.map((product) => (
-            <>
-              <ProductCard
-                key={product.id}
-                product={product}
-              />
-            </>
+            <ProductCard
+              key={product.id}
+              product={product}
+            />
           ))}
         </StyledGridWrapper>
       </Box>

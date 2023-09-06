@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { graphql } from "relay-runtime";
 import MainContainer from "../../components/MainContainer";
 import ProductForm from "../../components/ProductForm";

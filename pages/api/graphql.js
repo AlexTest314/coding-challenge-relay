@@ -16,6 +16,9 @@ const viewer = {
   }),
   products: () => products.get()
 };
+const viewer2 = {
+  product: (id) => products.getProduct(id)
+};
 
 const resolvers = {
   Query: {
