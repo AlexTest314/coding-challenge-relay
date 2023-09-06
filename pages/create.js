@@ -1,8 +1,13 @@
 import React from "react";
-import ProductForm from "../../components/ProductForm";
+import ProductForm from "../components/ProductForm";
+import MainContainer from "../components/MainContainer";
 
 const CreateProductPage = () => {
-  return <ProductForm />;
+  return (
+    <MainContainer>
+      <ProductForm />
+    </MainContainer>
+  );
 };
 
 export const createProductMutation = graphql`
@@ -21,16 +26,11 @@ export const createProductMutation = graphql`
 const CreateQuery = graphql`
   query createQuery {
     viewer {
-      products {
-        id
-        name
-        description
-        category
-        price
-        createdAt
-      }
+      products
     }
   }
 `;
+
 CreateProductPage.query = CreateQuery;
+
 export default CreateProductPage;

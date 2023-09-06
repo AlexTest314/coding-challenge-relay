@@ -10,10 +10,9 @@
 import type { ConcreteRequest } from 'relay-runtime';
 export type CreateProductInput = {|
   name: string,
-  category: string,
   description: string,
   price: number,
-  createdAt: string,
+  category: string,
 |};
 export type createMutationVariables = {|
   input: CreateProductInput

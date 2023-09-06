@@ -1,29 +1,30 @@
 // @flow strict
-import {
-  memo, useCallback, useState, useEffect,
-} from 'react';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
+import { memo } from "react";
 
-import Container from '@material-ui/core/Container';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
+import Container from "@material-ui/core/Container";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import { Button } from "@material-ui/core";
+import { useRouter } from "next/router";
 
 type Props = {
-  +children: React$Node,
+  +children: React$Node
 };
 
 const MainContainer = ({ children }: Props): React$Node => {
+  const router = useRouter();
+  const handleCancel = () => router.push({ pathname: "/" });
+  const handleCreateProduct = () => router.push({ pathname: "/create" });
   return (
     <>
-      <AppBar position="static">
+      <AppBar position='static'>
         <Toolbar>
-          Header
+          <Button onClick={handleCancel}>Home</Button>
+          <Button onClick={handleCreateProduct}>Create product</Button>
         </Toolbar>
       </AppBar>
 
-      <Container maxWidth="xl">
-        {children}
-      </Container>
+      <Container maxWidth='xl'>{children}</Container>
     </>
   );
 };

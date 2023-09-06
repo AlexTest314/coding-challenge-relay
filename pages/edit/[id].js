@@ -1,7 +1,8 @@
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { graphql } from "relay-runtime";
+import MainContainer from "../../components/MainContainer";
 import ProductForm from "../../components/ProductForm";
+import Custom404 from "../404";
 
 export const updateProductMutation = graphql`
   mutation Id_editUpdateMutation($input: UpdateProductInput!) {
@@ -31,32 +32,23 @@ const EditQuery = graphql`
   }
 `;
 
-const ProdutEditPage = (props) => {
-  const router = useRouter();
-
-  const [isEdit, setIsEdit] = useState(false);
-
-  const id = router.query.id;
-
-  useEffect(() => {
-    const editMode = router.asPath.includes("edit");
-    if (editMode) {
-      setIsEdit(true);
-    }
-  }, []);
-
-  const product = props.viewer.products.find((product) => product.id === id);
+const ProdutEditPage = ({ id, viewer }) => {
+  const product = viewer.products.find((product) => product.id === id);
+  if (!product) {
+    return <Custom404>Product not found</Custom404>;
+  }
 
   return (
-    <div>
-      <ProductForm
-        product={product}
-        isEdit={isEdit}
-      />
-    </div>
+    <MainContainer>
+      <ProductForm product={product} />
+    </MainContainer>
   );
 };
 
 ProdutEditPage.query = EditQuery;
+
+ProdutEditPage.getInitialProps = async (ctx) => {
+  return { id: ctx.query.id };
+};
 
 export default ProdutEditPage;

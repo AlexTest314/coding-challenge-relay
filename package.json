@@ -50,6 +50,7 @@
     "graphql-tag": "^2.12.6",
     "relay-compiler": "12.0.0",
     "relay-config": "^12.0.0",
+    "styled-components": "^6.0.7",
     "yup": "^1.2.0"
   }
 }

@@ -11,9 +11,9 @@ import type { ConcreteRequest } from 'relay-runtime';
 export type UpdateProductInput = {|
   id: string,
   name: string,
-  category: string,
   description: string,
   price: number,
+  category: string,
   createdAt: string,
 |};
 export type Id_editUpdateMutationVariables = {|
