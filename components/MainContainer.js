@@ -8,7 +8,7 @@ import { Button } from "@material-ui/core";
 import { useRouter } from "next/router";
 
 type Props = {
-  +children: React$Node
+  children: React$Node
 };
 
 const MainContainer = ({ children }: Props): React$Node => {

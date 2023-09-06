@@ -35,7 +35,7 @@ const StyledForm = styled.form`
   align-items: center;
 
   @media (max-width: 390px) {
-    width: 360px;
+    width: 340px;
   }
 `;
 

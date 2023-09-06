@@ -70,5 +70,4 @@ function ProductCard({ product }: { product: $FlowFixMe }) {
     </>
   );
 }
-
 export default ProductCard;
